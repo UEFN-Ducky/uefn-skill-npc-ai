@@ -1,0 +1,15 @@
+{
+  "format": "ducky-skill-pack",
+  "format_version": 3,
+  "exported_at": "2026-08-02T18:40:09Z",
+  "pack_id": "npc-ai",
+  "label": "UEFN NPC AI & Enemies",
+  "description": "UEFN NPC AI exact recipes \u2014 character definitions, equipment/weapons, Verse behaviors, SG projectiles, damage, shoot-down, spawning. Recreate Roguelike enemies 1:1.",
+  "version": 6,
+  "license": "Ducky Source-Available License v1.0",
+  "author": "Iliya Kovachki",
+  "copyright": "Copyright 2026 Iliya Kovachki",
+  "homepage": "",
+  "contact": "",
+  "allow_redistribute": false
+}

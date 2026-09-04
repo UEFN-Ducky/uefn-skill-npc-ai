@@ -1,0 +1,12 @@
+License: Ducky Source-Available License v1.0
+
+Copyright 2026 Iliya Kovachki
+
+Author: Iliya Kovachki
+
+"UEFN NPC AI & Enemies" is licensed for personal use by the purchaser only.
+You may not redistribute, resell, share, sublicense, or publicly host
+this skill pack (including the .ducky-skill-pack / .zip archive) without
+prior written permission from the copyright holder.
+
+All rights reserved unless a different license is stated above.
