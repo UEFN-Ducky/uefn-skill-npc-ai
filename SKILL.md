@@ -4,7 +4,7 @@ description: "UEFN NPC AI exact recipes — character definitions, equipment/wea
 license: Ducky Source-Available License v1.0
 metadata:
   label: "UEFN NPC AI & Enemies"
-  version: 8
+  version: 9
   author: Iliya Kovachki
   copyright: Copyright 2026 Iliya Kovachki
   allow_redistribute: false
@@ -68,7 +68,7 @@ This pack holds the **exact Roguelike recipes** agents need to recreate the same
 
 | `get_npc_definition_info` / DefaultBehavior | Fresh NPCDefs use `CharacterModifier_DefaultBehavior` — **no** `npc_behavior_script`. That read is success (`kind=default`). Compile, then `set_npc_definition_behavior` (replaces with VerseBehavior). Never retry the same info call as if it were broken. |
 
-| `wire_verse_*` STALE REFLECTION | Field has no compiled hash. Compile **before** the first wire. Host already retries once — **never hammer** `wire_verse_device_array` / `wire_verse_device_ref`. Wait for the build, re-inspect, re-place if still no hash. |
+| `wire_verse_*` STALE REFLECTION | Field has no compiled hash. Compile **before** the first wire. Host already retries once — **never hammer** `wire_verse_device_array` / `wire_verse_device_ref`. Wait for the build, re-inspect the **same** device, wire once. Never place a second copy — a duplicate has the same stale class; the existing instance gets the hashes when the build lands. |
 
 
 
