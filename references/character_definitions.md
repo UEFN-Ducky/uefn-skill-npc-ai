@@ -3,6 +3,8 @@ metadata:
   origin: store
 ---
 
+**Tool order (HARD):** 1) Official UEFN MCP first (`ducky_get_status` → `epic_mcp_online` → nested `unreal__*`). 2) Ducky listener second. 3) `execute_python` LAST — never a placement path, even if Epic and listener failed. Map: `skill_read_subskill("uefn", "epic_mcp")`.
+
 # NPCCharacterDefinition — composition
 
 Pair with `skill_read_subskill("animation", "npc_characters")` for the **tools**.
@@ -34,7 +36,10 @@ What `create_npc_character_definition` writes:
 5. **`character_parts = []`** — populated parts re-enter the Fortnite outfit path
 6. **`animation_bp = null`** — locomotion is the AnimPreset
 
-Verify: `get_npc_definition_info` → `spawns_custom_mesh: true`.
+Verify: `get_npc_definition_info` → `spawns_custom_mesh: true`. A fresh def
+reports `behavior.kind=default` (stock DefaultBehavior has no
+`npc_behavior_script`) — that is **not** a failure. After compile +
+`set_npc_definition_behavior`, `kind` becomes `verse` and the script path is set.
 
 ## Reaction / attack clips — not Details
 
@@ -50,7 +55,10 @@ Combat-enemy `@editable` numeric ranges still live on the class with defaults (s
 
 1. Epic `PlaceDevice` Character Spawner (`npc_spawner_device`) per type. Label + folder in that call.
 2. `set_npc_spawner_definition({"actor_path": "<label>", "definition_path": "…/NPCDef_*"})`
-3. `wire_verse_device_ref` into the spawn manager / `cat_spawn_controller`.
+3. `workspace_compile_verse` **must succeed first**. Then `get_verse_editables`
+   and `wire_verse_device_ref` / `wire_verse_device_array` into the spawn
+   manager. STALE REFLECTION = no hash yet — do not retry the wire; wait /
+   re-inspect. Never Details.
 
 ## End-to-end (one new enemy)
 
