@@ -4,7 +4,7 @@ description: "UEFN NPC AI exact recipes — character definitions, equipment/wea
 license: Ducky Source-Available License v1.0
 metadata:
   label: "UEFN NPC AI & Enemies"
-  version: 9
+  version: 11
   author: Iliya Kovachki
   copyright: Copyright 2026 Iliya Kovachki
   allow_redistribute: false
@@ -14,10 +14,6 @@ metadata:
 ---
 
 # NPC AI & Enemies — recreate index
-
-**Tool order (HARD):** 1) Official UEFN MCP first — `ducky_get_status`; when `epic_mcp_online` use nested `unreal__*` (`unreal__list_toolsets` → `unreal__describe_toolset` → `unreal__call_tool`; 5+ ops → ProgrammaticToolset `execute_tool_script`). 2) Ducky listener second (Epic-offline gaps + Ducky-only tools listed in this skill). 3) `execute_python` LAST — never a placement/layout path, even if Epic and listener already failed. Never spawn, move, or assign materials. Map: `skill_read_subskill("uefn", "epic_mcp")`.
-
-
 
 Source project: `Roguelike` — content under `/AI/`, Verse under `Verse/GameDevices/AISystems/`.
 
@@ -155,3 +151,7 @@ Content/Verse/GameDevices/AISystems/
 6. If ranged: place `enemy_projectile_shootdown` + SG Queryable walls (`projectiles`, `shootdown`).
 
 7. `workspace_list_verse_errors` → PIE chase / visible weapon / hit prints / elim count.
+
+## Verify
+
+`get_npc_definition_info` / `inspect_verse_device` on the same device.
