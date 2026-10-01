@@ -66,3 +66,10 @@ Combat-enemy `@editable` numeric ranges still live on the class with defaults (s
 4. Duplicate attack clips into the Verse module folder; write or reuse the behavior class.
 5. Compile → `set_npc_definition_behavior`.
 6. Place spawner → `set_npc_spawner_definition` → wire manager → PIE.
+
+## Talking NPCs (42.30)
+
+A character definition can add a **Persona Modifier** so the NPC talks by voice and
+drives gameplay through structured output — verse `sys_conversations`, template
+`llm_npc`. One persona per definition; the persona works alongside the combat
+behaviors here (an enemy that taunts, a merchant that haggles).

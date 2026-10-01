@@ -4,7 +4,7 @@ description: "UEFN NPC AI exact recipes — character definitions, equipment/wea
 license: Ducky Source-Available License v1.0
 metadata:
   label: "UEFN NPC AI & Enemies"
-  version: 11
+  version: 12
   author: Iliya Kovachki
   copyright: Copyright 2026 Iliya Kovachki
   allow_redistribute: false
